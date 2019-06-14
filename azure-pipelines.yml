@@ -8,7 +8,7 @@ trigger:
 
 pool: Default
 
-variables: { agent.disablelogplugin.TestResultLogPlugin: 'false' }
+variables: { agent.disablelogplugin.TestResultLogPlugin: 'false', skipComponentGovernanceDetection: 'true' }
 
 steps:
 - script: npm install
