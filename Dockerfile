@@ -2,7 +2,5 @@ FROM library/node AS build
 WORKDIR /app
 COPY . ./app
 
-RUN npm install
-RUN npm test
-
+CMD ['npm','install']
 CMD ['npm','run','test','*.js']
