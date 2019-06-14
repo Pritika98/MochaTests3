@@ -6,7 +6,8 @@
 trigger:
 - master
 
-pool: Default
+pool:
+  vmImageName: 'ubuntu-latest'
 
 variables: { agent.disablelogplugin.TestResultLogPlugin: 'false', skipComponentGovernanceDetection: 'true' }
 
