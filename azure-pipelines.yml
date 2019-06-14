@@ -9,11 +9,11 @@ trigger:
 pool:
   vmImageName: 'ubuntu-latest'
 
-variables: { agent.disablelogplugin.TestResultLogPlugin: 'false', skipComponentGovernanceDetection: 'true' }
+variables:
+  agent.disablelogplugin.TestResultLogPlugin: 'false'
+  skipComponentGovernanceDetection: 'true'
 
 steps:
-- script: npm install
-  displayName: 'npm install'
-
-- script: npm run test *.js
-  displayName: 'npm test'
+- script: |
+    docker build -t myimg .
+    docker run myimg
