@@ -3,6 +3,6 @@ WORKDIR /app
 COPY . .
 
 #CMD [ "npm", "start" ]
-#CMD [ "npm", "install" ]
-#CMD [ "npm" , "run" , "test" , "*.js" ]
+RUN npm install
+RUN npm run test *.js
 CMD [ "npm", "start" ]
