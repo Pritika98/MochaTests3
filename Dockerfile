@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/core/sdk:2.2 AS build
+FROM library/node AS build
 WORKDIR /app
 COPY . ./app
 
