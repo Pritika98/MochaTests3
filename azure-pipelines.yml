@@ -32,14 +32,10 @@ stages:
         command: login
         containerRegistry: 'dockerazure'
     - task: Docker@2
-      displayName: Build and push an image to container registry
       inputs:
-        command: buildAndPush
-        repository: $(imageRepository)
-        dockerfile: $(dockerfilePath)
         containerRegistry: 'dockerazure'
-        tags: |
-          $(tag)
+        command: 'build'
+        Dockerfile: '**/Dockerfile'
     - script: |
           docker run $(imgName)
 
